@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'Calcutta';
+    src: local('Calcutta Bold Italic'), local('Calcutta-BoldItalic'),
+        url('Calcutta-BoldItalic.woff2') format('woff2'),
+        url('Calcutta-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Calcutta';
+    src: local('Calcutta Light Italic'), local('Calcutta-LightItalic'),
+        url('Calcutta-LightItalic.woff2') format('woff2'),
+        url('Calcutta-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Calcutta';
+    src: local('Calcutta Medium Regular'), local('Calcutta-Medium'),
+        url('Calcutta-Medium.woff2') format('woff2'),
+        url('Calcutta-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Calcutta';
+    src: local('Calcutta Italic'), local('Calcutta-Italic'),
+        url('Calcutta-Italic.woff2') format('woff2'),
+        url('Calcutta-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Calcutta';
+    src: local('Calcutta Regular'), local('Calcutta-Regular'),
+        url('Calcutta-Regular.woff2') format('woff2'),
+        url('Calcutta-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Calcutta';
+    src: local('Calcutta Bold'), local('Calcutta-Bold'),
+        url('Calcutta-Bold.woff2') format('woff2'),
+        url('Calcutta-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Calcutta';
+    src: local('Calcutta Light Regular'), local('Calcutta-Light'),
+        url('Calcutta-Light.woff2') format('woff2'),
+        url('Calcutta-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Calcutta';
+    src: local('Calcutta Medium Italic'), local('Calcutta-MediumItalic'),
+        url('Calcutta-MediumItalic.woff2') format('woff2'),
+        url('Calcutta-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Calcutta';
+    src: local('Calcutta SemiBold Regular'), local('Calcutta-SemiBold'),
+        url('Calcutta-SemiBold.woff2') format('woff2'),
+        url('Calcutta-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Calcutta';
+    src: local('Calcutta SemiBold Italic'), local('Calcutta-SemiBoldItalic'),
+        url('Calcutta-SemiBoldItalic.woff2') format('woff2'),
+        url('Calcutta-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
