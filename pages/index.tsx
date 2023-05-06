@@ -13,8 +13,8 @@ export default function NotePage({
         allPosts.map((post) => (
           <article key={post.slug} className="mb-10">
             <Link
-              as={`/${post.slug}`}
-              href="/[slug]"
+              as={`/posts/${post.slug}`}
+              href="/posts/[slug]"
               className="text-lg leading-6 font-bold"
             >
               {post.title}

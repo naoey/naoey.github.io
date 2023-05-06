@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-200;
+    @apply text-gray-700;
+    @apply dark:bg-gray-900;
+    @apply dark:text-gray-400;
+    @apply antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  a {
+    @apply text-pink-600;
+  }
+
+  .heading-main {
+    @apply text-gray-700;
+    @apply dark:text-gray-400;
+
+    @apply text-lg;
+    @apply font-bold;
+    @apply flex;
+    @apply flex-row;
+    @apply align-middle;
+    @apply justify-center;
+    @apply md:justify-start;
+  }
+}
