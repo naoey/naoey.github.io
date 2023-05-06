@@ -1,35 +1,41 @@
+import type { InferGetStaticPropsType } from 'next'
+import Link from 'next/link'
 import Container from '../components/container'
-import Image from 'next/image'
+import distanceToNow from '../lib/dateRelative'
+import { getAllPosts } from '../lib/getPost'
 
-function HomePage() {
+export default function NotePage({
+  allPosts,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <>
-      <Container>
-        <div className="space-y-6">
-          <h1 className="text-2xl font-bold">
-            Hey, I'm a Senior Software Engineer at Company. I enjoy working with
-            Next.js and crafting beautiful front-end experiences.
-          </h1>
-          <p>
-            This portfolio is built with Next.js and a library called next-mdx.
-            It allows you to write Markdown and focus on the content of your
-            portfolio.
-          </p>
-
-          <p>Deploy your own in a few minutes.</p>
-        </div>
-      </Container>
-
-      <div className="container max-w-4xl m-auto px-4 mt-20">
-        <Image
-          src="/desk.jpg"
-          alt="my desk"
-          width={1920 / 2}
-          height={1280 / 2}
-        />
-      </div>
-    </>
+    <Container>
+      {allPosts.length ? (
+        allPosts.map((post) => (
+          <article key={post.slug} className="mb-10">
+            <Link
+              as={`/${post.slug}`}
+              href="/[slug]"
+              className="text-lg leading-6 font-bold"
+            >
+              {post.title}
+            </Link>
+            <p>{post.excerpt}</p>
+            <div className="text-gray-400">
+              <time>{distanceToNow(new Date(post.date))}</time>
+            </div>
+          </article>
+        ))
+      ) : (
+        <p>No blog posted yet :/</p>
+      )}
+    </Container>
   )
 }
 
-export default HomePage
+export async function getStaticProps() {
+  const allPosts = getAllPosts(['slug', 'title', 'excerpt', 'date'])
+
+  return {
+    props: { allPosts },
+  }
+}

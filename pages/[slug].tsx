@@ -1,11 +1,11 @@
 import type { InferGetStaticPropsType } from 'next'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Comment from '../../components/comment'
-import Container from '../../components/container'
-import distanceToNow from '../../lib/dateRelative'
-import { getAllPosts, getPostBySlug } from '../../lib/getPost'
-import markdownToHtml from '../../lib/markdownToHtml'
+import Comment from '../components/comment'
+import Container from '../components/container'
+import distanceToNow from '../lib/dateRelative'
+import { getAllPosts, getPostBySlug } from '../lib/getPost'
+import markdownToHtml from '../lib/markdownToHtml'
 import Head from 'next/head'
 
 export default function PostPage({
@@ -20,7 +20,7 @@ export default function PostPage({
   return (
     <Container>
       <Head>
-        <title>{post.title} | My awesome blog</title>
+        <title>{post.title} | naoey</title>
       </Head>
 
       {router.isFallback ? (
