@@ -6,7 +6,10 @@ import matter from 'gray-matter'
 const postsDirectory = join(process.cwd(), '_posts')
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory)
+  return fs
+    .readdirSync(postsDirectory, { recursive: true, withFileTypes: true })
+    .filter(f => f.name.endsWith('.md') && !f.isDirectory())
+    .map(f => f.name);
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
@@ -35,7 +38,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 }
 
 export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs().filter((f) => f.endsWith(".md"))
+  const slugs = getPostSlugs()
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
