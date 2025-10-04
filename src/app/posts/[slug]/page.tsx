@@ -6,16 +6,7 @@ import markdownToHtml from "@/lib/markdownToHtml";
 import Container from "@/app/_components/container";
 import { PostBody } from "@/app/_components/post-body";
 import { Intro } from "@/app/_components/intro";
-import styled from "styled-components";
-
-const PostLayout = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-    
-  @screen md {
-    grid-template-columns: 1fr 2fr;
-  }
-`;
+import DateFormatter from "@/app/_components/date-formatter";
 
 export default async function Post(props: Params) {
   const params = await props.params;
@@ -31,21 +22,15 @@ export default async function Post(props: Params) {
     <main>
       <Intro />
       <Container>
-        <PostLayout>
-          <div>
-            <p>{post.author.name}</p>
-            <p>{post.date}</p>
+        <div className="grid grid-cols-1 md:grid-cols-[300px_1fr]">
+          <div className="text-center md:text-right">
+            <h4 className="font-bold text-2xl mt-[1.5rem] text-rose-600 dark:text-rose-950">{post.author.name}</h4>
+            <p className="mt-1.5"><DateFormatter dateString={post.date} /></p>
           </div>
           <article className="mb-32">
-            {/*<PostHeader*/}
-            {/*  title={post.title}*/}
-            {/*  coverImage={post.coverImage}*/}
-            {/*  date={post.date}*/}
-            {/*  author={post.author}*/}
-            {/*/>*/}
             <PostBody content={content} />
           </article>
-        </PostLayout>
+        </div>
       </Container>
     </main>
   );
