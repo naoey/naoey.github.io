@@ -4,7 +4,7 @@ import DateFormatter from "./date-formatter";
 import { Noto_Sans_Display } from "next/font/google";
 import classNames from "classnames";
 
-const notoSans = Noto_Sans_Display();
+const notoSans = Noto_Sans_Display({ subsets: ["latin"] });
 
 type Props = {
   title: string;

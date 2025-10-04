@@ -2,7 +2,7 @@ import markdownStyles from "./markdown-styles.module.css";
 import { Noto_Sans_Display } from "next/font/google";
 import classNames from "classnames";
 
-const notoSans = Noto_Sans_Display();
+const notoSans = Noto_Sans_Display({ subsets: ["latin"] });
 
 type Props = {
   content: string;

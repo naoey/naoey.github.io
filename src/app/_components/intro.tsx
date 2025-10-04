@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Noto_Sans_Display } from "next/font/google";
 import classNames from "classnames";
 
-const notoSans = Noto_Sans_Display();
+const notoSans = Noto_Sans_Display({ subsets: ["latin"] });
 
 export function Intro() {
   return (
