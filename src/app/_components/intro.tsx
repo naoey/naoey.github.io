@@ -11,8 +11,6 @@ export function Intro() {
   const titleRef = useRef();
 
   useEffect(() => {
-    let ticking = false;
-
     const handleScroll = () => {
       requestAnimationFrame(() => {
         const shrinkRatio = Math.min(window.scrollY, full_shrink_threshold) / full_shrink_threshold;
@@ -41,7 +39,7 @@ export function Intro() {
       className="sticky top-0 left-0 right-0 w-100 px-5 py-8 flex-col flex items-center justify-center md:mb-8 bg-slate-200 dark:bg-slate-950 text-center"
       ref={headerRef}
     >
-      <Link href="/" className="hover:underline">
+      <Link href="/">
         <h1 className="text-rose-900 text-4xl font-bold tracking-tighter leading-tight md:pr-8" ref={titleRef}>
           Letters to the Stars
         </h1>
