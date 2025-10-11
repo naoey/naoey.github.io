@@ -13,7 +13,7 @@ export function Intro() {
   useEffect(() => {
     const handleScroll = () => {
       requestAnimationFrame(() => {
-        const shrinkRatio = Math.min(window.scrollY, full_shrink_threshold) / full_shrink_threshold;
+        const shrinkRatio = Math.max(Math.min(window.scrollY, full_shrink_threshold) / full_shrink_threshold, 0);
         const interpolate = (max: number, min: number) => max - (max - min) * shrinkRatio;
         const fontHeading = interpolate(38, 24);
         const height = interpolate(140, 60);
