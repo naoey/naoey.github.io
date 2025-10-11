@@ -10,7 +10,7 @@ export default function Index() {
     <main>
       <Intro />
       <Container>
-        <p className="italic my-2">Idle musings late at night, occasional writing inspiration, words...</p>
+        <p className="italic my-2">Idle musings late at night, occasional writing inspiration, words rambled at no one in particular...</p>
 
         <p className="my-2">Hello, any wanderers who may stumble across this page 👋</p>
 
