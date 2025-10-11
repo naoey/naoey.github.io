@@ -1,13 +1,13 @@
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
-import { Source_Sans_3 } from "next/font/google";
+import { Ysabeau } from "next/font/google";
 import cn from "classnames";
 import StyledComponentsRegistry from "@/lib/styled-registry";
 
 import "./globals.css";
 import { ThemeSwitcher } from "@/app/_components/theme-switcher";
 
-const font = Source_Sans_3({ weight: ["400", "700"], subsets: ["latin"] });
+const font = Ysabeau({ weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: `Next.js Blog Example with ${CMS_NAME}`,
