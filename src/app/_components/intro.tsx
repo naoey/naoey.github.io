@@ -1,18 +1,51 @@
-import Link from "next/link";
-import { Noto_Sans_Display } from "next/font/google";
-import classNames from "classnames";
+"use client";
 
-const notoSans = Noto_Sans_Display({ subsets: ["latin"] });
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+
+/** The scroll threshold by which the header should finish shrinking */
+const full_shrink_threshold = 100;
 
 export function Intro() {
+  const headerRef = useRef();
+  const titleRef = useRef();
+
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      requestAnimationFrame(() => {
+        const shrinkRatio = Math.min(window.scrollY, full_shrink_threshold) / full_shrink_threshold;
+        const interpolate = (max: number, min: number) => max - (max - min) * shrinkRatio;
+        const fontHeading = interpolate(38, 24);
+        const height = interpolate(140, 60);
+        const padding = interpolate(32, 16);
+
+        headerRef.current.style.padding = `${padding}px 20px`;
+        headerRef.current.style.height = `${height}px`;
+        titleRef.current.style.fontSize = `${fontHeading}px`;
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <section className="flex-col flex items-center md:items-start md:justify-between px-5 py-8 md:mb-16 bg-slate-200 dark:bg-slate-950 text-center md:text-left">
+    <section
+      className="sticky top-0 left-0 right-0 w-100 px-5 py-8 flex-col flex items-center justify-center md:mb-8 bg-slate-200 dark:bg-slate-950 text-center"
+      ref={headerRef}
+    >
       <Link href="/" className="hover:underline">
-        <h1 className="text-4xl text-rose-900 md:text-7xl font-bold tracking-tighter leading-tight md:pr-8">Letters to the Stars</h1>
+        <h1 className="text-rose-900 text-4xl font-bold tracking-tighter leading-tight md:pr-8" ref={titleRef}>
+          Letters to the Stars
+        </h1>
       </Link>
-      <h4 className={classNames("text-sm md:text-xl mt-4", notoSans.className)}>
-        Idle musings late at night, excerpts from scribbles accumulated over a lifetime
-      </h4>
     </section>
   );
 }

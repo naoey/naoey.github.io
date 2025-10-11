@@ -24,8 +24,10 @@ export default async function Post(props: Params) {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-[minmax(max-content,_300px)_1fr] gap-6">
           <div className="text-center md:text-right">
-            <h4 className="font-bold text-2xl mt-[1.5rem] text-rose-600 dark:text-rose-900">{post.author.name}</h4>
-            <p className="mt-1.5">
+            <h4 className="font-bold text-xl md:text-2xl mt-[1.5rem] text-rose-600 dark:text-rose-900">
+              {post.author.name}
+            </h4>
+            <p className="mt-0 text-sm md:text-base md:mt-1.5">
               <DateFormatter dateString={post.date} />
             </p>
           </div>
