@@ -10,7 +10,9 @@ export default function Index() {
     <main>
       <Intro />
       <Container>
-        <p className="italic my-2">Idle musings late at night, occasional writing inspiration, words rambled at no one in particular...</p>
+        <p className="italic my-2">
+          Idle musings late at night, occasional writing inspiration, words rambled at no one in particular...
+        </p>
 
         <p className="my-2">Hello, any wanderers who may stumble across this page 👋</p>
 
@@ -19,7 +21,7 @@ export default function Index() {
           random thoughts and some of them may make it here.
         </p>
 
-        <p className="my-2">I can be reached for any comment by old fashioned internet post at me(→)naoey.pw</p>
+        <p className="my-2">Anyone who wants to can reach me :at: naoey.pw using good old fashioned internet post.</p>
 
         <hr className="my-4 border-t border-b-slate-400 dark:border-slate-700" />
 
