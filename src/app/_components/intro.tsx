@@ -36,7 +36,7 @@ export function Intro() {
 
   return (
     <section
-      className="sticky top-0 left-0 right-0 w-100 px-5 py-8 flex-col flex items-center justify-center md:mb-8 bg-slate-200 dark:bg-slate-950 text-center"
+      className="sticky top-0 left-0 right-0 w-100 px-5 py-8 flex-col flex items-center justify-center bg-slate-200 dark:bg-slate-950 text-center"
       ref={headerRef}
     >
       <Link href="/">
