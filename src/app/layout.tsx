@@ -1,13 +1,14 @@
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
-import { Ysabeau } from "next/font/google";
+import { M_PLUS_2, Ysabeau } from "next/font/google";
 import cn from "classnames";
 import StyledComponentsRegistry from "@/lib/styled-registry";
 
 import "./globals.css";
 import { ThemeSwitcher } from "@/app/_components/theme-switcher";
 
-const font = Ysabeau({ weight: ["400", "700"], subsets: ["latin"] });
+const font = Ysabeau({ weight: ["400", "700"], subsets: ["latin"], variable: "--font-latin", display: "swap" });
+const japaneseFont = M_PLUS_2({ weight: ["400", "700"], variable: "--font-japanese", display: "swap" });
 
 export const metadata: Metadata = {
   title: `Next.js Blog Example with ${CMS_NAME}`,
@@ -36,7 +37,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={cn(font.className, "dark:bg-slate-900 dark:text-slate-400")}>
+      <body className={cn(japaneseFont.variable, font.variable, "dark:bg-slate-900 dark:text-slate-400")}>
         <StyledComponentsRegistry>
           <ThemeSwitcher />
 
