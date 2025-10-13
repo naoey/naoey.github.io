@@ -8,7 +8,7 @@ import "./globals.css";
 import { ThemeSwitcher } from "@/app/_components/theme-switcher";
 
 const font = Ysabeau({ weight: ["400", "700"], subsets: ["latin"], variable: "--font-latin", display: "swap" });
-const japaneseFont = M_PLUS_2({ weight: ["400", "700"], variable: "--font-japanese", display: "swap" });
+const japaneseFont = M_PLUS_2({ weight: ["400", "700"], preload: false, variable: "--font-japanese", display: "swap" });
 
 export const metadata: Metadata = {
   title: `Next.js Blog Example with ${CMS_NAME}`,
