@@ -1,4 +1,3 @@
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { M_PLUS_2, Ysabeau } from "next/font/google";
 import cn from "classnames";
@@ -11,11 +10,9 @@ const font = Ysabeau({ weight: ["400", "700"], subsets: ["latin"], variable: "--
 const japaneseFont = M_PLUS_2({ weight: ["400", "700"], preload: false, variable: "--font-japanese", display: "swap" });
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
-  openGraph: {
-    images: [HOME_OG_IMAGE_URL],
-  },
+  title: `Letters to the Stars`,
+  description: `Strangers on the internet with random thoughts and words`,
+  openGraph: {},
 };
 
 export default function RootLayout({
