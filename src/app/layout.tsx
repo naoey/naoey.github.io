@@ -1,13 +1,38 @@
 import type { Metadata } from "next";
-import { M_PLUS_2, Ysabeau } from "next/font/google";
+import { Mukta, Noto_Sans_JP, Noto_Sans_Kannada, Source_Sans_3 } from "next/font/google";
 import cn from "classnames";
 import StyledComponentsRegistry from "@/lib/styled-registry";
 
 import "./globals.css";
 import { ThemeSwitcher } from "@/app/_components/theme-switcher";
 
-const font = Ysabeau({ weight: ["400", "700"], subsets: ["latin"], variable: "--font-latin", display: "swap" });
-const japaneseFont = M_PLUS_2({ weight: ["400", "700"], preload: false, variable: "--font-japanese", display: "swap" });
+const fontLatin = Source_Sans_3({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-latin",
+  display: "swap",
+});
+
+const fontJapanese = Noto_Sans_JP({
+  weight: ["400", "700"],
+  preload: false, // Recommended for non-Latin fonts to prevent huge initial load
+  variable: "--font-japanese",
+  display: "swap",
+});
+
+const fontHindi = Mukta({
+  weight: ["400", "700"],
+  subsets: ["devanagari"],
+  variable: "--font-hindi",
+  display: "swap",
+});
+
+const fontKannada = Noto_Sans_Kannada({
+  weight: ["400", "700"],
+  subsets: ["kannada"],
+  variable: "--font-kannada",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: `Letters to the Stars`,
@@ -34,7 +59,15 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={cn(japaneseFont.variable, font.variable, "dark:bg-slate-900 dark:text-slate-400")}>
+      <body
+        className={cn(
+          fontJapanese.variable,
+          fontHindi.variable,
+          fontKannada.variable,
+          fontLatin.variable,
+          "dark:bg-slate-900 dark:text-slate-400",
+        )}
+      >
         <StyledComponentsRegistry>
           <ThemeSwitcher />
 

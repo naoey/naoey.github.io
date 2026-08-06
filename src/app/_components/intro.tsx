@@ -7,12 +7,14 @@ import { useEffect, useRef } from "react";
 const full_shrink_threshold = 100;
 
 export function Intro() {
-  const headerRef = useRef();
-  const titleRef = useRef();
+  const headerRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       requestAnimationFrame(() => {
+        if (!headerRef.current || !titleRef.current) return;
+
         const shrinkRatio = Math.max(Math.min(window.scrollY, full_shrink_threshold) / full_shrink_threshold, 0);
         const interpolate = (max: number, min: number) => max - (max - min) * shrinkRatio;
         const fontHeading = interpolate(38, 24);
@@ -36,7 +38,7 @@ export function Intro() {
 
   return (
     <section
-      className="sticky top-0 left-0 right-0 w-100 px-5 py-8 flex-col flex items-center justify-center bg-slate-200 dark:bg-slate-950 text-center"
+      className="w-full sticky top-0 left-0 right-0 w-100 px-5 py-8 flex-col flex items-center justify-center bg-slate-200 dark:bg-slate-950 text-center"
       ref={headerRef}
     >
       <Link href="/">
