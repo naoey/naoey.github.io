@@ -71,9 +71,7 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <ThemeSwitcher />
 
-          <div className="min-h-screen w-full bg-stone-100 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-white to-stone-100">
-            {children}
-          </div>
+          <div className="min-h-screen w-full">{children}</div>
         </StyledComponentsRegistry>
       </body>
     </html>

@@ -37,15 +37,15 @@ export function Intro() {
   }, []);
 
   return (
-    <section
-      className="w-full sticky top-0 left-0 right-0 w-100 px-5 py-8 flex-col flex items-center justify-center bg-slate-950 dark:bg-slate-950 text-center"
+    <header
+      className="w-full sticky top-0 left-0 right-0 px-5 py-8 flex-col flex items-center justify-center bg-stone-900/70 text-center backdrop-blur-md"
       ref={headerRef}
     >
       <Link href="/">
-        <h1 className="text-rose-600 text-4xl font-bold tracking-tighter leading-tight md:pr-8" ref={titleRef}>
+        <h1 className="text-rose-600 text-4xl my-0 font-bold tracking-tighter leading-tight md:pr-8" ref={titleRef}>
           Letters to the Stars
         </h1>
       </Link>
-    </section>
+    </header>
   );
 }
