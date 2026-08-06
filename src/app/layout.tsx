@@ -7,28 +7,28 @@ import "./globals.css";
 import { ThemeSwitcher } from "@/app/_components/theme-switcher";
 
 const fontLatin = Source_Sans_3({
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
   subsets: ["latin"],
   variable: "--font-latin",
   display: "swap",
 });
 
 const fontJapanese = Noto_Sans_JP({
-  weight: ["400", "700"],
-  preload: false, // Recommended for non-Latin fonts to prevent huge initial load
+  weight: ["400", "600", "700"],
+  preload: false,
   variable: "--font-japanese",
   display: "swap",
 });
 
 const fontHindi = Mukta({
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
   subsets: ["devanagari"],
   variable: "--font-hindi",
   display: "swap",
 });
 
 const fontKannada = Noto_Sans_Kannada({
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
   subsets: ["kannada"],
   variable: "--font-kannada",
   display: "swap",
