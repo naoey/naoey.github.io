@@ -8,7 +8,7 @@ export default function Index() {
   return (
     <main>
       <Intro />
-      <div className="max-w-3xl m-auto">
+      <div className="max-w-3xl m-auto px-3 py-5">
         <p className="my-2">Hello to any strangers who may stumble across this page 👋</p>
 
         <p className="my-2">
