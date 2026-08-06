@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Mukta, Noto_Sans_JP, Noto_Sans_Kannada, Source_Sans_3 } from "next/font/google";
 import cn from "classnames";
 import StyledComponentsRegistry from "@/lib/styled-registry";
+import { ThemeSwitcher } from "@/app/_components/theme-switcher";
 
 import "./globals.css";
-import { ThemeSwitcher } from "@/app/_components/theme-switcher";
 
 const fontLatin = Source_Sans_3({
   weight: ["400", "600", "700"],
@@ -71,7 +71,9 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <ThemeSwitcher />
 
-          <div className="min-h-screen">{children}</div>
+          <div className="min-h-screen w-full bg-stone-100 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-white to-stone-100">
+            {children}
+          </div>
         </StyledComponentsRegistry>
       </body>
     </html>
