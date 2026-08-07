@@ -11,7 +11,7 @@ export default async function markdownToHtml(markdown: string) {
     .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeStringify)
-    .use(rehypePrettyCode, { theme: { dark: "rose-pine-moon", light: "rose-pine-dawn" }, keepBackground: false })
+    .use(rehypePrettyCode, { theme: { dark: "rose-pine-moon", light: "rose-pine-dawn" }, keepBackground: true })
     .process(markdown);
   return result.toString();
 }

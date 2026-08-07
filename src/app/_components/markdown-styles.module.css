@@ -32,3 +32,17 @@
   max-width: 125%;
   font-family: var(--code-font);
 }
+
+.markdown [data-rehype-pretty-code-figure] code span {
+  color: var(--shiki-light);
+  font-style: var(--shiki-light-font-style, normal);
+  font-weight: var(--shiki-light-font-weight, normal);
+  text-decoration: var(--shiki-light-text-decoration, none);
+}
+
+.dark .markdown [data-rehype-pretty-code-figure] code span {
+  color: var(--shiki-dark) !important;
+  font-style: var(--shiki-dark-font-style, normal) !important;
+  font-weight: var(--shiki-dark-font-weight, normal) !important;
+  text-decoration: var(--shiki-dark-text-decoration, none) !important;
+}

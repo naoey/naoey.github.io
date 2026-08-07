@@ -18,7 +18,7 @@ export default function Index() {
         </p>
 
         <p className="my-2">
-          Anyone who wants to can reach <i>me :at: naoey.pw</i> using good old-fashioned internet mail.
+          Anyone who wants to can reach <i>me :at: naoey.pw</i> via good old-fashioned internet mail.
         </p>
 
         <hr className="my-4 border-t border-b-slate-400 dark:border-slate-700" />
