@@ -7,7 +7,7 @@
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
-  @apply text-justify my-6;
+  @apply my-6;
 }
 
 .markdown h1,
@@ -24,4 +24,11 @@
 
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
+}
+
+.markdown code {
+  font-size: 16px;
+  overflow: auto;
+  max-width: 125%;
+  font-family: var(--code-font);
 }

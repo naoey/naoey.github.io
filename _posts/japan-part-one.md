@@ -77,3 +77,36 @@ Ultimately, successful multilingual design is measured by the stillness of the r
 日本語の文章、英語のエッセイ、そしてインディック言語の記述が同じスクロール領域に共存するとき、各言語の美しさが互いを引き立て合います。
 
 By prioritizing cohesive font choices, forgiving line heights, and thoughtful background accents, web typography transforms raw text into an immersive digital artifact—a space where ideas flow unimpeded across borders, scripts, and media.
+
+---
+
+## 7. Code Block
+
+```tsx
+import { Post } from "@/interfaces/post";
+import { PostPreview } from "./post-preview";
+
+type Props = {
+  posts: Post[];
+};
+
+export function MoreStories({ posts }: Props) {
+  return (
+    <section>
+      <div className="grid grid-cols-1 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
+        {posts.map((post) => (
+          <PostPreview
+            key={post.slug}
+            title={post.title}
+            coverImage={post.coverImage}
+            date={post.date}
+            author={post.author}
+            slug={post.slug}
+            excerpt={post.excerpt}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+```

@@ -1,13 +1,15 @@
 import CoverImage from "@/app/_components/cover-image";
 import Link from "next/link";
+import DateFormatter from "@/app/_components/date-formatter";
 
 type Props = {
   title: string;
-  coverImage: string;
+  coverImage?: string;
   slug: string;
+  timestamp?: string;
 };
 
-export function HeroPost({ title, coverImage, slug }: Props) {
+export function HeroPost({ title, coverImage, slug, timestamp }: Props) {
   return (
     <section className="mx-auto">
       {coverImage ? (
@@ -20,6 +22,11 @@ export function HeroPost({ title, coverImage, slug }: Props) {
           {title}
         </Link>
       </h1>
+      {timestamp ? (
+        <p className="text-center">
+          <DateFormatter dateString={timestamp} />
+        </p>
+      ) : null}
     </section>
   );
 }

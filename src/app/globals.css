@@ -9,7 +9,7 @@
   ul,
   ol,
   blockquote {
-    @apply text-lg leading-relaxed text-justify my-6;
+    @apply text-lg leading-relaxed my-6;
   }
 
   h1,
@@ -82,5 +82,13 @@
       color-mix(in srgb, var(--color-stone-700) 60%, transparent) 50%,
       transparent
     );
+  }
+
+  header {
+    @apply bg-stone-900/70;
+  }
+
+  .dark header {
+    @apply bg-stone-700/70;
   }
 }

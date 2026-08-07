@@ -1,21 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import styled from "styled-components";
 
 /** The scroll threshold by which the header should finish shrinking */
 const full_shrink_threshold = 100;
 
-export function Intro() {
+const LinksWrapper = styled.div`
+  transition: opacity 300ms ease;
+`;
+
+export function Header() {
   const headerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
 
+  const [isShrunk, setIsShrunk] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
+      const shrinkRatio = Math.max(Math.min(window.scrollY, full_shrink_threshold) / full_shrink_threshold, 0);
+
+      setIsShrunk(shrinkRatio > 0);
+
       requestAnimationFrame(() => {
         if (!headerRef.current || !titleRef.current) return;
 
-        const shrinkRatio = Math.max(Math.min(window.scrollY, full_shrink_threshold) / full_shrink_threshold, 0);
         const interpolate = (max: number, min: number) => max - (max - min) * shrinkRatio;
         const fontHeading = interpolate(38, 24);
         const height = interpolate(140, 60);
@@ -38,14 +48,25 @@ export function Intro() {
 
   return (
     <header
-      className="w-full sticky top-0 left-0 right-0 px-5 py-8 flex-col flex items-center justify-center bg-stone-900/70 text-center backdrop-blur-md"
+      className="w-full sticky top-0 left-0 right-0 px-5 py-8 flex-row flex items-center justify-between text-center backdrop-blur-md"
       ref={headerRef}
     >
-      <Link href="/">
-        <h1 className="text-rose-600 text-4xl my-0 font-bold tracking-tighter leading-tight md:pr-8" ref={titleRef}>
-          Letters to the Stars
-        </h1>
-      </Link>
+      <div>
+        <Link href="/">
+          <h1 className="text-4xl my-0 font-bold tracking-tighter leading-tight md:pr-8" ref={titleRef}>
+            Letters to the Stars
+          </h1>
+        </Link>
+      </div>
+
+      <LinksWrapper style={{ opacity: isShrunk ? 0 : 1 }} className="flex flex-row justify-center items-center gap-3.5">
+        <Link className="hover:underline" href="/">
+          <h4>Blog</h4>
+        </Link>
+        <Link className="hover:underline" href="/about">
+          <h4>About</h4>
+        </Link>
+      </LinksWrapper>
     </header>
   );
 }

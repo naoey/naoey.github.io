@@ -4,7 +4,7 @@ import { getAllPosts, getPostBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Container from "@/app/_components/container";
 import { PostBody } from "@/app/_components/post-body";
-import { Intro } from "@/app/_components/intro";
+import { Header } from "@/app/_components/header";
 import { HeroPost } from "@/app/_components/hero-post";
 
 export default async function Post(props: Params) {
@@ -19,8 +19,9 @@ export default async function Post(props: Params) {
 
   return (
     <main>
-      <Intro />
-      <HeroPost title={post.title} coverImage={post.ogImage?.url} slug={post.slug} />
+      <Header />
+      <HeroPost title={post.title} coverImage={post.ogImage?.url} slug={post.slug} timestamp={post.date} />
+      <hr />
       <Container>
         <article className="mb-32">
           <PostBody content={content} />

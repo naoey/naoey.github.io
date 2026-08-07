@@ -1,4 +1,4 @@
-import { Intro } from "@/app/_components/intro";
+import { Header } from "@/app/_components/header";
 import { MoreStories } from "@/app/_components/more-stories";
 import { getAllPosts } from "@/lib/api";
 
@@ -7,8 +7,8 @@ export default function Index() {
 
   return (
     <main>
-      <Intro />
-      <div className="max-w-3xl m-auto px-3 py-5">
+      <Header />
+      <div className="max-w-3xl m-auto px-5 py-8">
         <p className="my-2">Hello to any strangers who may stumble across this page 👋</p>
 
         <p className="my-2">

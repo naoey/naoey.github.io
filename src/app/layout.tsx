@@ -8,6 +8,7 @@ import "./globals.css";
 
 const fontLatin = Source_Sans_3({
   weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-latin",
   display: "swap",
