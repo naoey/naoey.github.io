@@ -5,6 +5,10 @@
     font-family: var(--font-latin), var(--font-kannada), var(--font-hindi), var(--font-japanese), sans-serif;
   }
 
+  a {
+    @apply text-rose-500 underline;
+  }
+
   p,
   ul,
   ol,
