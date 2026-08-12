@@ -48,7 +48,7 @@ export function Header() {
 
   return (
     <header
-      className="w-full sticky top-0 left-0 right-0 px-5 py-8 flex-row flex items-center justify-between text-center backdrop-blur-md"
+      className="relative w-full sticky top-0 left-0 right-0 px-5 py-8 flex-col md:flex-row flex items-center justify-center md:justify-between text-center backdrop-blur-md"
       ref={headerRef}
     >
       <div>

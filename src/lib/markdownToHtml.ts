@@ -19,7 +19,7 @@ function createLucideHast(iconNode: IconNode, className: string = "lucide-extern
       viewBox: "0 0 24 24",
       fill: "none",
       stroke: "currentColor",
-      strokeWidth: 2,
+      strokeWidth: "2",
       strokeLinecap: "round",
       strokeLinejoin: "round",
       style: "display: inline-block; vertical-align: -0.125em; margin-left: 0.2em;",
@@ -49,5 +49,6 @@ export default async function markdownToHtml(markdown: string) {
       content: lucideIconHast,
     })
     .process(markdown);
+
   return result.toString();
 }

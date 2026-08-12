@@ -93,6 +93,6 @@
   }
 
   .dark header {
-    @apply bg-stone-700/70;
+    @apply bg-indigo-950/70;
   }
 }
